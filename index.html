@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>InMinutes — Delivery from local markets, restaurants and more in Arepo, Ogun State</title>
+<meta name="description" content="InMinutes delivers from local markets, restaurants, supermarkets, pharmacies and grill spots around Arepo, Ogun State. Order in the app, pay securely, and a trained rider brings it to your door.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#FAF6EE; --bg-2:#F1EADC; --ink:#241B13; --muted:#6B5E50;
+  --gold:#94742A; --gold-soft:#E9DCBC; --line:#DDD1BA; --green:#2F5D46;
+  --on-gold:#FFFFFF;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#17110C; --bg-2:#211911; --ink:#F3EADB; --muted:#B5A790;
+    --gold:#D4AE5A; --gold-soft:#3A2E1C; --line:#3A2F22; --green:#7FB396;
+    --on-gold:#17110C;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#17110C; --bg-2:#211911; --ink:#F3EADB; --muted:#B5A790;
+  --gold:#D4AE5A; --gold-soft:#3A2E1C; --line:#3A2F22; --green:#7FB396;
+  --on-gold:#17110C;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:calc(env(safe-area-inset-top,0px) + 72px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:"Figtree",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  font-size:1.0625rem;line-height:1.6;-webkit-font-smoothing:antialiased}
+img{max-width:100%}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:4px}
+.wrap{max-width:1120px;margin:0 auto;padding:0 1.25rem}
+h1,h2,h3{font-family:"Fraunces",Georgia,"Times New Roman",serif;font-weight:600;line-height:1.15;margin:0}
+h2{font-size:clamp(1.75rem,4vw,2.5rem);max-width:20ch}
+p{margin:0}
+.lede{color:var(--muted);max-width:60ch}
+
+/* Nav */
+header.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--bg);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:1rem}
+.brand{font-family:"Fraunces",Georgia,serif;font-size:1.4rem;font-weight:600;text-decoration:none;letter-spacing:-.01em}
+.brand span{color:var(--gold)}
+.nav nav{display:flex;gap:1.5rem;align-items:center}
+.nav nav a{text-decoration:none;color:var(--muted);font-size:.95rem}
+.nav nav a:hover{color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;font-weight:600;font-size:.98rem;padding:.8rem 1.3rem;border-radius:999px;border:1px solid var(--gold);transition:background .2s,color .2s}
+.btn-gold{background:var(--gold);color:var(--on-gold)}
+.btn-gold:hover{filter:brightness(1.07)}
+.btn-ghost{color:var(--ink)}
+.btn-ghost:hover{background:var(--gold-soft)}
+@media (max-width:760px){.nav nav a:not(.btn){display:none}.nav .btn{padding:.55rem 1rem;font-size:.9rem}}
+
+/* Hero */
+.hero{padding:4.5rem 0 4rem}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.hero h1{font-size:clamp(2.4rem,6.5vw,4.25rem);letter-spacing:-.02em;max-width:13ch}
+.hero .lede{margin-top:1.25rem;font-size:1.15rem}
+.hero .ctas{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:2rem}
+.where{margin-top:1.5rem;font-size:.95rem;color:var(--muted)}
+@media (max-width:880px){.hero .wrap{grid-template-columns:1fr;gap:2.5rem}.hero{padding:3rem 0}}
+
+/* Order timeline (hero signature) */
+.ticket{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:1.75rem 1.75rem 1.5rem}
+.ticket-head{display:flex;justify-content:space-between;align-items:baseline;gap:1rem;padding-bottom:1rem;border-bottom:1px dashed var(--line)}
+.ticket-head strong{font-family:"Fraunces",Georgia,serif;font-size:1.15rem;font-weight:600}
+.ticket-head small{color:var(--muted);font-size:.85rem}
+.steps{list-style:none;margin:1.25rem 0 0;padding:0;position:relative}
+.steps::before{content:"";position:absolute;left:7px;top:10px;bottom:10px;width:2px;background:var(--line)}
+.steps::after{content:"";position:absolute;left:7px;top:10px;width:2px;height:0;background:var(--gold);animation:fill 3.2s .4s ease-out forwards}
+@keyframes fill{to{height:calc(100% - 20px)}}
+.steps li{position:relative;display:grid;grid-template-columns:auto 1fr auto;gap:1rem;align-items:baseline;padding:.65rem 0;opacity:.35;animation:on .3s ease-out forwards}
+.steps li::before{content:"";width:16px;height:16px;border-radius:50%;background:var(--bg-2);border:2px solid var(--line);position:relative;z-index:1;transform:translateY(3px);animation:dot .3s ease-out forwards;animation-delay:inherit}
+.steps li:nth-child(1){animation-delay:.4s}.steps li:nth-child(2){animation-delay:1.4s}
+.steps li:nth-child(3){animation-delay:2.4s}.steps li:nth-child(4){animation-delay:3.4s}
+@keyframes on{to{opacity:1}}
+@keyframes dot{to{background:var(--gold);border-color:var(--gold)}}
+.steps b{font-weight:600;display:block}
+.steps span{color:var(--muted);font-size:.9rem}
+.steps time{font-variant-numeric:tabular-nums;color:var(--muted);font-size:.9rem}
+.ticket-foot{margin-top:1rem;padding-top:1rem;border-top:1px dashed var(--line);display:flex;justify-content:space-between;font-size:.9rem;color:var(--muted)}
+.ticket-foot strong{color:var(--green);font-weight:600}
+@media (prefers-reduced-motion:reduce){
+  .steps li,.steps li::before,.steps::after{animation:none}
+  .steps li{opacity:1}.steps li::before{background:var(--gold);border-color:var(--gold)}
+  .steps::after{height:calc(100% - 20px)}
+  html{scroll-behavior:auto}
+}
+
+/* Sections */
+section.block{padding:5rem 0;border-top:1px solid var(--line)}
+.block-head{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:3rem}
+@media (max-width:760px){.block-head{grid-template-columns:1fr;gap:1rem}section.block{padding:3.5rem 0}}
+
+/* Services list */
+.services{list-style:none;margin:0;padding:0}
+.services li{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr) minmax(0,1fr);gap:1.5rem;padding:1.6rem 0;border-bottom:1px solid var(--line);align-items:baseline}
+.services li:first-child{border-top:1px solid var(--line)}
+.services h3{font-size:1.4rem}
+.services .tag{display:inline-block;margin-top:.4rem;font-size:.8rem;font-weight:600;color:var(--green);background:transparent;border:1px solid var(--green);border-radius:999px;padding:.1rem .6rem}
+.services p{color:var(--muted)}
+.services .price{font-size:.95rem}
+.services .price b{display:block;color:var(--ink);font-weight:600;font-size:.85rem;margin-bottom:.15rem}
+@media (max-width:760px){.services li{grid-template-columns:1fr;gap:.5rem}}
+
+/* How it works */
+.how{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;counter-reset:s}
+.how li{counter-increment:s;border-top:2px solid var(--gold);padding-top:1.25rem}
+.how li::before{content:counter(s);font-family:"Fraunces",Georgia,serif;font-size:2.25rem;color:var(--gold);line-height:1;display:block;margin-bottom:.75rem}
+.how h3{font-size:1.2rem;margin-bottom:.4rem}
+.how p{color:var(--muted);font-size:.98rem}
+@media (max-width:880px){.how{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.how{grid-template-columns:1fr}}
+
+/* Standard */
+.standard{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start}
+.standard dl{margin:0;display:grid;gap:1.5rem}
+.standard dt{font-weight:600}
+.standard dd{margin:.25rem 0 0;color:var(--muted)}
+.quote{font-family:"Fraunces",Georgia,serif;font-size:clamp(1.5rem,3.2vw,2.1rem);line-height:1.3;max-width:22ch}
+@media (max-width:760px){.standard{grid-template-columns:1fr;gap:2rem}}
+
+/* Pay */
+.pay{background:var(--bg-2);border:1px solid var(--line);border-radius:20px;padding:2rem;display:grid;grid-template-columns:1.2fr 1fr;gap:2rem;align-items:center}
+.pay ul{margin:0;padding-left:1.1rem;color:var(--muted)}
+.pay li{margin:.3rem 0}
+@media (max-width:760px){.pay{grid-template-columns:1fr}}
+
+/* Partner */
+.partner{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.partner article{border:1px solid var(--line);border-radius:20px;padding:2rem}
+.partner h3{font-size:1.4rem;margin-bottom:.6rem}
+.partner p{color:var(--muted);margin-bottom:1.25rem}
+@media (max-width:760px){.partner{grid-template-columns:1fr}}
+
+/* Policies */
+details{border-bottom:1px solid var(--line)}
+details:first-of-type{border-top:1px solid var(--line)}
+summary{cursor:pointer;list-style:none;padding:1.3rem 0;display:flex;justify-content:space-between;align-items:center;gap:1rem;font-family:"Fraunces",Georgia,serif;font-size:1.25rem;font-weight:600}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-family:"Figtree",sans-serif;font-weight:400;font-size:1.5rem;color:var(--gold);transition:transform .2s}
+details[open] summary::after{transform:rotate(45deg)}
+.policy{padding:0 0 1.75rem;color:var(--muted);max-width:70ch}
+.policy h4{color:var(--ink);font-size:1rem;margin:1.25rem 0 .3rem}
+.policy p+p{margin-top:.6rem}
+.policy ul{margin:.4rem 0;padding-left:1.1rem}
+.updated{font-size:.85rem;margin-top:1.25rem}
+
+/* Contact */
+.contact{display:grid;grid-template-columns:1fr 1fr;gap:3rem}
+.contact dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.9rem 1.5rem}
+.contact dt{color:var(--muted)}
+.contact dd{margin:0;font-weight:500}
+.contact dd a{text-decoration-color:var(--gold);text-underline-offset:3px}
+@media (max-width:760px){.contact{grid-template-columns:1fr;gap:2rem}.contact dl{grid-template-columns:1fr;gap:.15rem}.contact dd{margin-bottom:.8rem}}
+
+footer{border-top:1px solid var(--line);padding:2.5rem 0;color:var(--muted);font-size:.9rem}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+footer a{text-decoration:none}
+footer nav{display:flex;gap:1.25rem}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a href="#top" class="brand" aria-label="InMinutes home">In<span>Minutes</span></a>
+    <nav aria-label="Main">
+      <a href="#services">Services</a>
+      <a href="#how">How it works</a>
+      <a href="#policies">Policies</a>
+      <a href="#contact" class="btn btn-gold">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <h1>Your market run, done in minutes.</h1>
+        <p class="lede">InMinutes delivers from local markets, restaurants, supermarkets, pharmacies and grill spots around Arepo, Ogun State. Order in the app, pay securely, and a trained rider brings it to your door.</p>
+        <div class="ctas">
+          <a href="#services" class="btn btn-gold">See what we deliver</a>
+          <a href="#contact" class="btn btn-ghost">Talk to us</a>
+        </div>
+        <p class="where">Now serving Arepo and nearby communities in Ogun State.</p>
+      </div>
+
+      <aside class="ticket" aria-label="Example of an InMinutes order">
+        <div class="ticket-head">
+          <strong>Market order</strong>
+          <small>Example delivery</small>
+        </div>
+        <ol class="steps">
+          <li><div><b>Order placed</b><span>Tomatoes, pepper, onions, fresh fish</span></div><time>2:04 pm</time></li>
+          <li><div><b>Rider at the market</b><span>Your trader packs and checks each item</span></div><time>2:10 pm</time></li>
+          <li><div><b>On the way</b><span>Sealed bag, rider in uniform</span></div><time>2:17 pm</time></li>
+          <li><div><b>Delivered to your door</b><span>Receipt sent to your phone</span></div><time>2:29 pm</time></li>
+        </ol>
+        <div class="ticket-foot"><span>Paid securely online</span><strong>Complete</strong></div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="block" id="services">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>What we deliver</h2>
+        <p class="lede">One app for the everyday errands. You see the item prices and the delivery fee before you pay.</p>
+      </div>
+      <ul class="services">
+        <li>
+          <div><h3>Local markets</h3><span class="tag">Our speciality</span></div>
+          <p>Fresh foodstuff, vegetables, fish, meat and provisions from trusted traders in the local market, picked and packed for you.</p>
+          <p class="price"><b>How it's priced</b>Market price set by the trader, plus a delivery fee.</p>
+        </li>
+        <li>
+          <div><h3>Restaurants</h3></div>
+          <p>Hot meals, shawarma and snacks from partner restaurants, packed to arrive the way they left the kitchen.</p>
+          <p class="price"><b>How it's priced</b>Menu price set by the restaurant, plus a delivery fee.</p>
+        </li>
+        <li>
+          <div><h3>Supermarkets</h3></div>
+          <p>Groceries, household items, drinks and toiletries from partner supermarkets.</p>
+          <p class="price"><b>How it's priced</b>Shelf price set by the store, plus a delivery fee.</p>
+        </li>
+        <li>
+          <div><h3>Pharmacies</h3></div>
+          <p>Over-the-counter medicines and health essentials from licensed partner pharmacies. Prescription items need a valid prescription.</p>
+          <p class="price"><b>How it's priced</b>Pharmacy price, plus a delivery fee.</p>
+        </li>
+        <li>
+          <div><h3>Grills</h3></div>
+          <p>Suya, grilled chicken, barbecue fish, asun and other grills from partner grill spots, wrapped hot and sent straight to you.</p>
+          <p class="price"><b>How it's priced</b>Price set by the grill spot, plus a delivery fee.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="how">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>How it works</h2>
+        <p class="lede">Four steps from your phone to your door.</p>
+      </div>
+      <ol class="how">
+        <li><h3>Choose a store</h3><p>Pick a market trader, restaurant, grill spot, supermarket or pharmacy and add what you need.</p></li>
+        <li><h3>Pay securely</h3><p>Pay with card, bank transfer or USSD. Payments are processed by Paystack.</p></li>
+        <li><h3>We pick it up</h3><p>A trained rider collects your order and checks it matches what you paid for.</p></li>
+        <li><h3>Delivered</h3><p>Your order arrives at your door and you get a receipt on your phone.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap standard">
+      <p class="quote">We treat every delivery like we're bringing it to family.</p>
+      <dl>
+        <div><dt>Trained, presentable riders</dt><dd>Every rider goes through our training on courtesy, food handling and safe riding, and wears the InMinutes uniform.</dd></div>
+        <div><dt>Checked before it leaves</dt><dd>Riders confirm your items at pickup, so what you ordered is what arrives.</dd></div>
+        <div><dt>Clear prices</dt><dd>Item prices and the delivery fee are shown before you pay. No surprise charges at the door.</dd></div>
+        <div><dt>Real people when you need help</dt><dd>Reach our support team by phone, WhatsApp or email if anything goes wrong.</dd></div>
+      </dl>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="wrap">
+      <div class="pay">
+        <div>
+          <h2>Safe, simple payments</h2>
+          <p class="lede" style="margin-top:1rem">All online payments on InMinutes are processed securely by Paystack. We never see or store your full card details.</p>
+        </div>
+        <ul>
+          <li>Debit cards (Verve, Visa, Mastercard)</li>
+          <li>Bank transfer</li>
+          <li>USSD</li>
+          <li>Receipts sent after every payment</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="partner">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Grow with InMinutes</h2>
+        <p class="lede">We're building with the traders, shops and riders of our community.</p>
+      </div>
+      <div class="partner">
+        <article>
+          <h3>For stores and traders</h3>
+          <p>List your market stall, restaurant, grill spot, supermarket or pharmacy. We bring you new customers and handle delivery, and you set your own prices.</p>
+          <a href="#contact" class="btn btn-ghost">Become a partner</a>
+        </article>
+        <article>
+          <h3>For riders</h3>
+          <p>Earn by delivering in your area, on a bicycle or motorbike. We train you, provide a uniform and pay you for every completed delivery.</p>
+          <a href="#contact" class="btn btn-ghost">Apply to ride</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="policies">
+    <div class="wrap">
+      <div class="block-head">
+        <h2>Policies</h2>
+        <p class="lede">How refunds, your data and our service work.</p>
+      </div>
+
+      <details id="refunds">
+        <summary>Refund and cancellation policy</summary>
+        <div class="policy">
+          <h4>Cancelling an order</h4>
+          <p>You can cancel for a full refund before a rider picks up your order. Once a store has started preparing or packing your order, we may deduct the cost of items already prepared.</p>
+          <h4>When you get a refund</h4>
+          <ul>
+            <li>Items that are missing from your order.</li>
+            <li>Items that arrive damaged, spoiled or different from what you ordered.</li>
+            <li>Orders we cannot deliver.</li>
+          </ul>
+          <h4>How to request one</h4>
+          <p>Contact us within 24 hours of delivery with your order number and a photo of the problem. We review every request within 2 working days.</p>
+          <h4>How refunds are paid</h4>
+          <p>Approved refunds go back to your original payment method and usually arrive within 5 to 10 working days, depending on your bank. You can also choose InMinutes credit, which is available immediately.</p>
+          <h4>Things we can't refund</h4>
+          <p>Perishable items that were delivered correctly and in good condition, or orders where the address or phone number provided was wrong and the rider could not reach you.</p>
+        </div>
+      </details>
+
+      <details id="terms">
+        <summary>Terms of service</summary>
+        <div class="policy">
+          <p>By using InMinutes you agree to these terms. InMinutes connects you with independent stores and delivers your orders to you.</p>
+          <h4>Orders and prices</h4>
+          <p>Stores set their own item prices. We show the item prices and delivery fee before you pay.</p>
+          <h4>Your account</h4>
+          <p>Give an accurate name, phone number and address, and keep your login details private. You are responsible for orders placed from your account.</p>
+          <h4>Delivery</h4>
+          <p>Delivery times shown in the app are estimates. Please be available to receive your order at the address you give.</p>
+          <h4>Restricted items</h4>
+          <p>Prescription medicines require a valid prescription. We do not deliver illegal items, and we may refuse orders we believe are unsafe.</p>
+          <h4>Changes</h4>
+          <p>We may update these terms. The date below shows when they last changed.</p>
+        </div>
+      </details>
+
+      <details id="privacy">
+        <summary>Privacy policy</summary>
+        <div class="policy">
+          <h4>What we collect</h4>
+          <p>Your name, phone number, email, delivery addresses and order history, so we can deliver your orders and support you.</p>
+          <h4>How we use it</h4>
+          <p>To process and deliver orders, send receipts and order updates, handle refunds and improve our service. We share only what's needed with the store and rider handling your order.</p>
+          <h4>Payments</h4>
+          <p>Card and bank payments are processed by Paystack. We do not store your full card details.</p>
+          <h4>Your choices</h4>
+          <p>You can ask us to see, correct or delete your personal data at any time by contacting us. We handle personal data in line with the Nigeria Data Protection Act 2023.</p>
+        </div>
+      </details>
+      <p class="updated lede">Last updated: 30 September 2026</p>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap contact">
+      <div>
+        <h2>Talk to us</h2>
+        <p class="lede" style="margin-top:1rem">Questions about an order, partnering with us or riding for InMinutes? We're here to help.</p>
+      </div>
+      <dl>
+        <dt>Phone</dt><dd><a href="tel:+2348109212834">+234 810 921 2834</a></dd>
+        <dt>WhatsApp</dt><dd><a href="https://wa.me/2348109212834">+234 810 921 2834</a></dd>
+        <dt>Email</dt><dd><a href="mailto:hello@inminutesapp.com">hello@inminutesapp.com</a></dd>
+        <dt>Address</dt><dd>Arepo, Ogun State, Nigeria</dd>
+        <dt>Hours</dt><dd>Monday to Saturday, 8 am to 8 pm</dd>
+      </dl>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 In-Minutes. All rights reserved.</span>
+    <nav aria-label="Footer">
+      <a href="#terms">Terms</a>
+      <a href="#privacy">Privacy</a>
+      <a href="#refunds">Refunds</a>
+    </nav>
+  </div>
+</footer>
+
+<script>
+// Open a policy when its footer link is tapped
+document.querySelectorAll('footer a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',()=>{const d=document.querySelector(a.getAttribute('href'));if(d&&d.tagName==='DETAILS')d.open=true;});
+});
+if(location.hash){const d=document.querySelector(location.hash);if(d&&d.tagName==='DETAILS')d.open=true;}
+</script>
+</body>
+</html>
