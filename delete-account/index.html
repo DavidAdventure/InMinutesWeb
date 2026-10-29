@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Delete Your Account | InMinutes</title>
+<meta name="description" content="How to delete your InMinutes account and what happens to your data.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2; --surface: #ffffff; --text: #1f1a17; --muted: #6b625a;
+    --line: #e8e0d4; --gold: #a8843f; --on-gold: #1a1412; --field: #ffffff;
+    color-scheme: light;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #141010; --surface: #1c1716; --text: #efe8de; --muted: #a89e92;
+      --line: #2e2623; --gold: #c9a45c; --on-gold: #1a1412; --field: #241e1c;
+      color-scheme: dark;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; }
+  body {
+    background: var(--bg); color: var(--text);
+    font-family: "Manrope", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    font-size: 17px; line-height: 1.7;
+    padding-bottom: env(safe-area-inset-bottom, 0px);
+  }
+  .topbar {
+    position: sticky; top: 0; z-index: 5; background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: calc(env(safe-area-inset-top, 0px) + 14px) 22px 14px;
+  }
+  .brand { display: flex; align-items: center; gap: 12px; max-width: 760px; margin: 0 auto; text-decoration: none; }
+  .mark { width: 40px; height: 40px; border-radius: 10px; background: var(--gold); display: grid; place-items: center; color: var(--on-gold); }
+  .brand span { font-family: "Fraunces", Georgia, serif; font-weight: 700; font-size: 1.6rem; color: var(--gold); }
+  main { max-width: 760px; margin: 0 auto; padding: 44px 22px 80px; }
+  .eyebrow { text-transform: uppercase; letter-spacing: 0.14em; font-size: 0.78rem; font-weight: 700; color: var(--gold); margin: 0 0 10px; }
+  h1 { font-family: "Fraunces", Georgia, serif; font-size: clamp(2.2rem, 7vw, 3.1rem); line-height: 1.05; margin: 0 0 14px; }
+  .lead { color: var(--muted); margin: 0 0 8px; }
+  h2 { font-family: "Fraunces", Georgia, serif; font-size: 1.45rem; line-height: 1.25; margin: 44px 0 12px; }
+  p, li { max-width: 68ch; }
+  ol, ul { padding-left: 1.3em; }
+  li { margin-bottom: 8px; }
+  li::marker { color: var(--gold); font-weight: 700; }
+  a { color: var(--gold); text-underline-offset: 3px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; padding: 22px 20px; }
+  label { display: block; font-weight: 600; font-size: 0.95rem; margin: 14px 0 6px; }
+  label:first-child { margin-top: 0; }
+  .opt { color: var(--muted); font-weight: 400; }
+  input, textarea {
+    width: 100%; font: inherit; font-size: 16px; color: var(--text); background: var(--field);
+    border: 1px solid var(--line); border-radius: 10px; padding: 12px 14px;
+  }
+  textarea { min-height: 90px; resize: vertical; }
+  input:focus, textarea:focus { outline: 2px solid var(--gold); outline-offset: 1px; border-color: transparent; }
+  .error { color: #d4533b; font-size: 0.92rem; margin: 10px 0 0; min-height: 1.2em; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+  button {
+    font: inherit; font-weight: 700; border-radius: 10px; padding: 13px 18px; cursor: pointer;
+    border: 1px solid var(--gold); flex: 1 1 200px;
+  }
+  .primary { background: var(--gold); color: var(--on-gold); }
+  .secondary { background: transparent; color: var(--gold); }
+  button:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
+  .note { color: var(--muted); font-size: 0.92rem; margin: 14px 0 0; }
+  footer { margin-top: 56px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.92rem; }
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a class="brand" href="/">
+    <div class="mark" aria-hidden="true">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+    </div>
+    <span>InMinutes</span>
+  </a>
+</header>
+
+<main>
+  <p class="eyebrow">Account</p>
+  <h1>Delete your InMinutes account</h1>
+  <p class="lead">This page explains how to delete your account in the InMinutes app, provided by INMINUTES E-COMMERCE NIGERIA LIMITED, and what happens to your data.</p>
+
+  <h2>Delete it in the app</h2>
+  <ol>
+    <li>Open the InMinutes app and sign in.</li>
+    <li>Go to <strong>Profile</strong>, then <strong>Settings</strong>.</li>
+    <li>Tap <strong>Delete account</strong> and confirm.</li>
+  </ol>
+
+  <h2>Or ask us to delete it</h2>
+  <p>Can’t open the app? Send us a request and we’ll delete your account for you.</p>
+  <div class="card">
+    <label for="phone">Phone number on your account</label>
+    <input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 0810 000 0000">
+    <label for="email">Email on your account <span class="opt">(optional)</span></label>
+    <input id="email" type="email" autocomplete="email" placeholder="you@example.com">
+    <label for="reason">Reason for leaving <span class="opt">(optional)</span></label>
+    <textarea id="reason" placeholder="Tell us how we could do better"></textarea>
+    <p class="error" id="error" role="alert"></p>
+    <div class="buttons">
+      <button class="primary" type="button" id="viaEmail">Send request by email</button>
+      <button class="secondary" type="button" id="viaWhatsApp">Send on WhatsApp</button>
+    </div>
+    <p class="note">These buttons open your email app or WhatsApp with your request ready to send. To protect your account, we may ask you to confirm the request from the phone number or email linked to it.</p>
+  </div>
+
+  <h2>What happens next</h2>
+  <ul>
+    <li>We confirm your request and delete your account within 30 days.</li>
+    <li>Any active order should be completed or cancelled first.</li>
+    <li>Once deleted, your account can’t be restored. You’re welcome to sign up again anytime.</li>
+  </ul>
+
+  <h2>What we delete and what we keep</h2>
+  <ul>
+    <li><strong>Deleted:</strong> your name, phone number, email, saved addresses, order history linked to you, and app preferences.</li>
+    <li><strong>Kept:</strong> transaction and payment records we must keep by law for tax and accounting, held securely and only as long as required.</li>
+  </ul>
+  <p>For more detail, read our <a href="/privacy">Privacy Policy</a> or email <a href="mailto:hello@inminutesapp.com">hello@inminutesapp.com</a>.</p>
+
+  <footer>© 2026 INMINUTES E-COMMERCE NIGERIA LIMITED. All rights reserved.</footer>
+</main>
+
+<script>
+  (function () {
+    var EMAIL = "hello@inminutesapp.com";
+    var WHATSAPP = "2348109212834";
+    function buildMessage() {
+      var phone = document.getElementById("phone").value.trim();
+      var email = document.getElementById("email").value.trim();
+      var reason = document.getElementById("reason").value.trim();
+      var err = document.getElementById("error");
+      if (!phone) { err.textContent = "Please enter the phone number on your account."; return null; }
+      err.textContent = "";
+      var lines = ["Hello InMinutes,", "", "Please delete my InMinutes account.", "", "Phone number: " + phone];
+      if (email) lines.push("Email: " + email);
+      if (reason) lines.push("Reason: " + reason);
+      return lines.join("\n");
+    }
+    document.getElementById("viaEmail").addEventListener("click", function () {
+      var msg = buildMessage(); if (!msg) return;
+      window.location.href = "mailto:" + EMAIL + "?subject=" + encodeURIComponent("Delete my InMinutes account") + "&body=" + encodeURIComponent(msg);
+    });
+    document.getElementById("viaWhatsApp").addEventListener("click", function () {
+      var msg = buildMessage(); if (!msg) return;
+      window.location.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+    });
+  })();
+</script>
+</body>
+</html>
