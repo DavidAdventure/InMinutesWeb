@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Support | InMinutes</title>
+<meta name="description" content="Get help with your InMinutes orders, deliveries, payments and account.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #17120e;
+    --panel: #211a14;
+    --line: #3a2f25;
+    --gold: #d6ad5c;
+    --text: #f3ebdf;
+    --muted: #b7a893;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  a { color: var(--gold); }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 24px; }
+  header { border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; align-items: center; justify-content: space-between; height: 72px; }
+  .brand { font-family: "Fraunces", Georgia, serif; font-size: 24px; font-weight: 600; color: var(--text); text-decoration: none; }
+  .brand span { color: var(--gold); }
+  header nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  header nav a:hover { color: var(--text); }
+  main { padding: 64px 0 80px; }
+  h1 { font-family: "Fraunces", Georgia, serif; font-weight: 600; font-size: clamp(36px, 7vw, 52px); line-height: 1.1; margin: 0 0 16px; }
+  .lead { color: var(--muted); font-size: 19px; max-width: 34em; margin: 0 0 40px; }
+  .contacts { display: grid; gap: 12px; margin-bottom: 56px; }
+  .contact {
+    display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    padding: 20px 22px; background: var(--panel); border: 1px solid var(--line);
+    border-radius: 14px; text-decoration: none; color: var(--text);
+  }
+  .contact:hover { border-color: var(--gold); }
+  .contact strong { display: block; font-weight: 600; }
+  .contact small { color: var(--muted); font-size: 15px; }
+  .contact .go { color: var(--gold); font-weight: 600; white-space: nowrap; }
+  .contact.primary { border-color: var(--gold); }
+  h2 { font-family: "Fraunces", Georgia, serif; font-weight: 500; font-size: 26px; margin: 0 0 20px; }
+  dl { margin: 0 0 56px; }
+  dt { font-weight: 600; margin-top: 22px; }
+  dd { margin: 4px 0 0; color: var(--muted); }
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: 14px; }
+  footer p { margin: 4px 0; }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="brand" href="/">In<span>Minutes</span></a>
+    <nav><a href="/">Back to home</a></nav>
+  </div>
+</header>
+
+<main class="wrap">
+  <h1>How can we help?</h1>
+  <p class="lead">Questions about an order, a delivery, a payment or your account? Reach the InMinutes team directly using any of the options below.</p>
+
+  <div class="contacts">
+    <a class="contact primary" href="https://wa.me/2348109212834">
+      <span><strong>Chat on WhatsApp</strong><small>+234 810 921 2834</small></span>
+      <span class="go">Open chat</span>
+    </a>
+    <a class="contact" href="mailto:support@inminutesapp.com">
+      <span><strong>Email support</strong><small>support@inminutesapp.com</small></span>
+      <span class="go">Send email</span>
+    </a>
+    <a class="contact" href="tel:+2348109212834">
+      <span><strong>Call us</strong><small>+234 810 921 2834</small></span>
+      <span class="go">Call</span>
+    </a>
+  </div>
+
+  <h2>Common questions</h2>
+  <dl>
+    <dt>My order is late or something is missing</dt>
+    <dd>Message us on WhatsApp with your order number and we'll check with your rider and the store straight away.</dd>
+
+    <dt>I was charged but my order didn't go through</dt>
+    <dd>Send us your order number or payment reference by WhatsApp or email and we'll confirm the payment and arrange a refund if needed.</dd>
+
+    <dt>I can't log in to my account</dt>
+    <dd>Use the password reset option on the login screen. If that doesn't work, contact us from the phone number on your account.</dd>
+
+    <dt>How do I delete my account and data?</dt>
+    <dd>Follow the steps on our <a href="/delete-account">Delete account</a> page.</dd>
+
+    <dt>How do you use my information?</dt>
+    <dd>Read our <a href="/privacy">Privacy Policy</a>, or email privacy@inminutesapp.com with any questions.</dd>
+  </dl>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>INMINUTES E-COMMERCE NIGERIA LIMITED</p>
+    <p>3 Faisal Badmus Street, Havana Estate, Arepo, Ogun State, Nigeria</p>
+    <p><a href="/privacy">Privacy Policy</a> &nbsp;|&nbsp; <a href="/delete-account">Delete account</a></p>
+  </div>
+</footer>
+</body>
+</html>
